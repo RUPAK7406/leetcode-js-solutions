@@ -19,3 +19,19 @@ var isValid = function(s) {
     }
     return closeBrackets.length === 0
 };
+
+//Approach 2
+var isValid = function(s) {
+    let stringParanthesis = []
+    let paranthesisMap = new Map([['(', ')'], ['[',']'], ['{', '}']])
+
+    for(let index = 0; index <= s.length; index++){
+        if(paranthesisMap.has(s[index])){
+            stringParanthesis.push(paranthesisMap.get(s[index]))
+        }else if(s[index] !== stringParanthesis.pop()){
+            return false
+        }
+}
+
+return stringParanthesis.length === 0
+};
