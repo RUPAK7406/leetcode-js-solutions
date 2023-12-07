@@ -17,5 +17,5 @@ var isValid = function(s) {
             return false
         }
     }
-    return !closeBrackets.length
+    return closeBrackets.length === 0
 };
